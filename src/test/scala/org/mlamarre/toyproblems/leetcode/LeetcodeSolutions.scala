@@ -1,4 +1,4 @@
-package org.mlamarre.leetcode
+package org.mlamarre.toyproblems.leetcode
 
 import munit.FunSuite
 import scala.annotation.tailrec
