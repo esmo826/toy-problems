@@ -53,16 +53,16 @@ class LeetcodeSolutions extends FunSuite {
     assertEquals(shuffle(Array(1,1,2,2), 2).toList, List(1,2,1,2))
   }
 
-  test("1825. Finding MK Average") {
-    val mkaMaybe = MKAverage(3,1)
-    assert(mkaMaybe.isRight)
-    mkaMaybe.foreach{ mka =>
-      mka.addElement(3)
-      mka.addElement(1)
-      assertEquals(mka.calculateMKAverage(), 2)
-      mka.addElement(10)
-      assertEquals(mka.calculateMKAverage(), 4)
-      println("holeeeeeeee cow!")
-    }
-  }
+  // test("1825. Finding MK Average") {
+    // val mkaMaybe = MKAverage(3,1)
+    // assert(mkaMaybe.isRight)
+    // mkaMaybe.foreach{ mka =>
+      // mka.addElement(3)
+      // mka.addElement(1)
+      // assertEquals(mka.calculateMKAverage(), 2)
+      // mka.addElement(10)
+      // assertEquals(mka.calculateMKAverage(), 4)
+      // println("holeeeeeeee cow!")
+    // }
+  // }
 }
