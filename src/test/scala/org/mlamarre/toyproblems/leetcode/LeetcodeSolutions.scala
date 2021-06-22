@@ -10,8 +10,9 @@ import scala.collection.immutable.Queue
  * and vectors, hence the prevalence of Array instead of the more Scala-idiomatic List.
  */
 class LeetcodeSolutions extends FunSuite {
+
+  // https://leetcode.com/problems/two-sum/
   test("1. Two Sum") {
-    // https://leetcode.com/problems/two-sum/
     @tailrec
     def loopR(tgt: Int, nums: Array[Int], i: Int, j: Int): Array[Int] = {
       if (j >= nums.size) loopR(tgt, nums, i + 1, i + 2)
@@ -29,8 +30,8 @@ class LeetcodeSolutions extends FunSuite {
     assertEquals(twoSum(Array(6, 10, 9, -3, 3), 3).toList, List(0,3))
   }
 
+  // https://leetcode.com/problems/shuffle-the-array/
   test("1470. Shuffle the Array") {
-    // https://leetcode.com/problems/shuffle-the-array/
 
     @tailrec
     def loopR(nums: Array[Int], i: Int, acc: List[Int]): Array[Int] = {
@@ -47,8 +48,8 @@ class LeetcodeSolutions extends FunSuite {
     assertEquals(shuffle(Array(1,1,2,2), 2).toList, List(1,2,1,2))
   }
 
+  // https://leetcode.com/problems/running-sum-of-1d-array/
   test("1480. Running Sum of 1d Array") {
-    // https://leetcode.com/problems/running-sum-of-1d-array/
     def runningSum(nums: Array[Int]): Array[Int] = {
         nums.foldLeft(List.empty[Int]){ case (acc, n) =>
             (acc.headOption.getOrElse(0) + n) :: acc
@@ -59,8 +60,8 @@ class LeetcodeSolutions extends FunSuite {
     assertEquals(runningSum(Array(-3, 4, 101, 0)).toList, List(-3, 1, 102, 102))
   }
 
+  // https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/
   test("1700. Number of Students Unable to Eat Lunch") {
-    // https://leetcode.com/problems/number-of-students-unable-to-eat-lunch/
 
     @tailrec
     def loopR(
@@ -106,16 +107,4 @@ class LeetcodeSolutions extends FunSuite {
     assertEquals(countStudents(Array(1,1,1,0,0,1), Array(1,0,0,0,1,1)), 3)
   }
 
-  // test("1825. Finding MK Average") {
-    // val mkaMaybe = MKAverage(3,1)
-    // assert(mkaMaybe.isRight)
-    // mkaMaybe.foreach{ mka =>
-      // mka.addElement(3)
-      // mka.addElement(1)
-      // assertEquals(mka.calculateMKAverage(), 2)
-      // mka.addElement(10)
-      // assertEquals(mka.calculateMKAverage(), 4)
-      // println("holeeeeeeee cow!")
-    // }
-  // }
 }
