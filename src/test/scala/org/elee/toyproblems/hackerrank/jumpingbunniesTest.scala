@@ -20,9 +20,14 @@ class jumpingbunniesTest extends FunSuite {
     assertEquals(lcm(List(83, 75, 60, 37, 10, 26, 98, 15, 13, 22)), 6455549100L)
   }
 
-  test("lcm: case 5") {
+  test("lcm: case 5a") {
     import jumpingbunnies.Solution._
     assertEquals(lcm(List(597, 322, 187, 734, 498, 215, 176, 451, 114, 204)), 1467174839068147440L)
+  }
+
+  test("lcm: case 5b") {
+    import jumpingbunnies.Solution._
+    assertEquals(lcm(List(597, 322, 187, 734, 498, 215, 176, 451, 114, 204).map(_.toLong).reverse), 1467174839068147440L)
   }
 
   test("lcm: case 10") {

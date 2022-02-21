@@ -1,6 +1,7 @@
 package org.elee.toyproblems.hackerrank
 import scala.io.StdIn.readLine
 
+// https://www.hackerrank.com/challenges/jumping-bunnies/problem
 package jumpingbunnies {
 
   object Solution {
@@ -13,7 +14,9 @@ package jumpingbunnies {
         // don't understand why a * b / gcd(a,b) doesn't work
         // turns out that if you do the multiplication of a*b first, for large datasets/numbers, this can overflow
         a / gcd(a,b) * b
+        //( a * b )/ gcd(a,b)
     }
+
 
     def main(args: Array[String]): Unit = {
         /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution */
