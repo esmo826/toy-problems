@@ -11,9 +11,14 @@ package superdigit {
 
   object Solution {
 
-
+    // This is mapping each character into a long, which isn't memory efficient.
     def digitSumString(p: String): Long = {
-        (p.toList.map(x => Integer.parseInt(x.toString)).fold(0)(_+_)).toLong
+        (p.toList.map(_.asDigit)).fold(0)(_+_).toLong
+    }
+
+    // This version only holds 2 longs in memory at a time.
+    def digitSumString2(p: String): Long = {
+        p.toList.foldLeft(0L)((acc, c) => acc + c.asDigit)
     }
 
     def digitSum(n: Long): Long = {
@@ -30,7 +35,7 @@ package superdigit {
 
     def superDigit(k: String, n: Int): Long = {
         // Reducing P to digitsum * n so we don't need to waste memory creating a giant string.
-        val pReduced: Long = digitSumString(k) * n
+        val pReduced: Long = digitSumString2(k) * n
         // If a number is less than 10, P size == 1.
         if (pReduced < 10) pReduced
         else superDigit(digitSum(pReduced).toString, 1)
